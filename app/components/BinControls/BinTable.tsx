@@ -25,7 +25,13 @@ const columns: GridColDef[] = [
   },
 ];
 
-export const BinTable = ({ data }: { data: BinData[] }) => {
+export const BinTable = ({
+  data,
+  handleSelect,
+}: {
+  data: BinData[];
+  handleSelect: (selectionModel: string[]) => void;
+}) => {
   const rows = data.map((data) => ({
     id: data.id,
     location: data.loc,
@@ -45,6 +51,7 @@ export const BinTable = ({ data }: { data: BinData[] }) => {
         pageSize={8}
         rowsPerPageOptions={[5]}
         checkboxSelection
+        onSelectionModelChange={handleSelect as any}
       />
     </div>
   );
