@@ -1,0 +1,38 @@
+{
+  "BIN_0": {
+    "id": "BIN_0",
+    "loc": "Song yen",
+    "lat": 25.0434,
+    "lng": 121.561,
+    "CanFull": 0,
+    "PETFull": 0,
+    "BoxFull": 0
+  },
+  "BIN_1": {
+    "id": "BIN_1",
+    "loc": "NTU",
+    "lat": 25.019156,
+    "lng": 121.543705,
+    "CanFull": 0,
+    "PETFull": 0,
+    "BoxFull": 0
+  },
+  "BIN_2": {
+    "id": "BIN_2",
+    "loc": "Zhong Shan",
+    "lat": 25.023815564146783,
+    "lng": 121.55300252518907,
+    "CanFull": 0,
+    "PETFull": 0,
+    "BoxFull": 0
+  },
+  "BIN_3": {
+    "id": "BIN_3",
+    "loc": "Yuan Huan",
+    "lat": 25.039272881068776,
+    "lng": 121.54771931766652,
+    "CanFull": 0,
+    "PETFull": 0,
+    "BoxFull": 0
+  }
+}

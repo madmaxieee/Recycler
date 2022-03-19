@@ -1,7 +1,13 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+
+import { useMapBox } from "../../hooks";
+
+import styles from "./styles.module.css";
 
 export const Map = () => {
-  const mapRef = useRef();
-  // @ts-ignore
-  return <div ref={mapRef}></div>;
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  const { mapBox } = useMapBox(mapContainerRef);
+
+  return <div ref={mapContainerRef} className={styles.mapContainer} />;
 };

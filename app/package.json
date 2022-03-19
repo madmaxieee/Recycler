@@ -9,19 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mapbox/mapbox-gl-directions": "^4.1.0",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@mui/x-data-grid": "^5.6.1",
     "@types/mapbox-gl": "^2.6.3",
     "axios": "^0.26.1",
+    "dotenv-defaults": "^5.0.0",
     "framer-motion": "^6",
+    "install": "^0.13.0",
     "mapbox-gl": "^2.7.1",
     "next": "12.1.0",
+    "npm": "^8.5.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "redis": "^4.0.4"
   },
   "devDependencies": {
     "@types/node": "17.0.21",

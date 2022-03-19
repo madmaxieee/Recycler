@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import { Typography } from "@mui/material";
 
 export const Logo = () => (
-  <Box fontFamily="Lobster" fontSize="24">
+  <Typography fontFamily="Lobster" fontSize="24">
     Recycler
-  </Box>
+  </Typography>
 );

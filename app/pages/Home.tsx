@@ -1,17 +1,15 @@
 import type { NextPage } from "next";
 
-import { Hero, NavBar, Footer } from "../components";
-import { Box, VStack } from "@chakra-ui/react";
+import { NavBar } from "components";
+import { Box, Stack } from "@mui/material";
 
 const Home: NextPage = () => {
   return (
-    <VStack width="100vw">
+    <Stack width="100vw">
       <NavBar />
-      <Box minH="100vh">
-        <Hero />
-      </Box>
-      <Footer />
-    </VStack>
+      <Box sx={{ minHeight: "100vh" }}></Box>
+      {/* <Footer /> */}
+    </Stack>
   );
 };
 

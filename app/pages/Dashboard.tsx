@@ -1,17 +1,24 @@
 import type { NextPage } from "next";
 
-import { VStack, Box } from "@chakra-ui/react";
-import { NavBar, Footer, Map } from "../components";
+import { Box, Stack } from "@mui/material";
+import { NavBar, Map, BinControls } from "components";
 
 const Dashboard: NextPage = () => {
   return (
-    <VStack width="100vw">
+    <Stack width="100vw">
       <NavBar />
-      <Box minH="100vh">
+      <Stack
+        direction="row"
+        gap="4vw"
+        alignItems="start"
+        sx={{ minHeight: "100vh", pt: "5em", mx: "auto" }}
+      >
         <Map />
-      </Box>
-      <Footer />
-    </VStack>
+        <Box sx={{ width: "30vw" }}>
+          <BinControls />
+        </Box>
+      </Stack>
+    </Stack>
   );
 };
 
