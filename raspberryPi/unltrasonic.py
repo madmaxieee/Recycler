@@ -2,6 +2,10 @@
 import RPi.GPIO as GPIO
 import time
 
+from send_request import update_status
+
+bin_name = "BIN_0"
+
 # GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
 
@@ -52,18 +56,24 @@ def distance(ind):
 
 def update_ultrasonic():
     for i in range(3):
+        if moving_avgs[i] == -1:
+            moving_avgs[i] = distance(i)
         moving_avgs[i] = moving_avgs[i] * smooth_rate + distance(i) * (1 - smooth_rate)
+
+        if moving_avgs[i] < 12:
+            print(f"{names[i]} is full")
+            update_status(bin_name, f"{names[i]}Full", "true")
+        else:
+            update_status(bin_name, f"{names[i]}Full", "false")
+
+    time.sleep(1)
 
 
 if __name__ == "__main__":
     try:
         while True:
-            update_ultrasonic()
             print(moving_avgs)
-            time.sleep(1)
-            for i, avg in enumerate(moving_avgs):
-                if avg < 12:
-                    print(f"{names[i]} is full")
+            update_ultrasonic()
 
         # Reset by pressing CTRL + C
     except KeyboardInterrupt:

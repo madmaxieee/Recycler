@@ -1,0 +1,38 @@
++++ National Export Control +++
+
+
+ALNR:
+(Dual-Use classification (EU))
+	Technology (to be entered in P07):	N
+	SW:					N
+
+
+ECCN:
+(according to EAR, product located outside of U.S.)
+	Technology (to be entered in P07):	N
+	SW:					N
+
+US: ECCN-US
+(according to EAR, product located in U.S?
+	Technology (to be entered in P07):	EAR99
+	SW:					EAR99
+
+Singapore: SICLASS
+(Singapore Strategic Goods Classification)
+	Technology (to be entered in P07):	N
+	SW:					N
+
+Malaysia: MYCLASS
+(Strategic Trade Act 2010)
+	Technology (to be entered in P07):	N
+	SW:					N
+
+Mexico: MXCLASS
+(MX foreign trade regulations)
+	Technology (to be entered in P07):	N
+	SW:					N
+
+Hong Kong: HKCLASS
+(HK foreign trade regulations)
+	Technology (to be entered in P07):	N
+	SW:					N

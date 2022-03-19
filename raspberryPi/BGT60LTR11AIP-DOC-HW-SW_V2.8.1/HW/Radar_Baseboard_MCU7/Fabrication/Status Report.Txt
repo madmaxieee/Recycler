@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : PCB Document [RBB_MCU7_V2.2.PcbDoc]
+   Generated File[Pick Place for RBB_MCU7_V2.2.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 12:30:01 On 13.08.2020

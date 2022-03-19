@@ -1,0 +1,37 @@
+<Device firmwareVersion="v9.1.5" name="BGT60LTR11">
+  <Acquisition framePeriod_msec="128.0"/>
+  <BGT60LTR11Endpoint>
+    <DeviceInfo>
+      <shortName>BGT60LTR11</shortName>
+      <description>BGT60LTR11</description>
+      <minRfFrequency_kHz>60600000</minRfFrequency_kHz>
+      <maxRfFrequency_kHz>61400000</maxRfFrequency_kHz>
+      <numAntennasTx>1</numAntennasTx>
+      <numAntennasRx>1</numAntennasRx>
+      <maxTxPowerLevel>7</maxTxPowerLevel>
+      <numTempSensors>0</numTempSensors>
+      <majorVersionHW>1</majorVersionHW>
+      <minorVersionHW>0</minorVersionHW>
+      <interleavedRX>false</interleavedRX>
+      <rxDataFormat>RADAR_RX_DATA_COMPLEX_INTERLEAVED</rxDataFormat>
+    </DeviceInfo>
+    <FrameFormat>
+      <numSamplesPerChirp>256</numSamplesPerChirp>
+      <numChirpsPerFrame>1</numChirpsPerFrame>
+      <rxMask>1</rxMask>
+      <signalPart>RADAR_SIGNAL_I_AND_Q</signalPart>
+    </FrameFormat>
+    <Config>
+      <mode>BGT60LTR11_MODE_PULSE</mode>
+      <pulse_width>BGT60LTR11_PULSE_WIDTH_5us</pulse_width>
+      <pulse_repetition>BGT60LTR11_PULSE_REPETITION_500us</pulse_repetition>
+      <hold_time>BGT60LTR11_HOLD_TIME_10ms</hold_time>
+      <tx_power_level>7</tx_power_level>
+      <rx_if_gain_dB>50</rx_if_gain_dB>
+      <sampling_frequency_Hz>2000</sampling_frequency_Hz>
+      <is_external_adc>0</is_external_adc>
+      <detection_threshold>4</detection_threshold>
+      <motion_sensitivity_threshold>11</motion_sensitivity_threshold>
+    </Config>
+  </BGT60LTR11Endpoint>
+</Device>

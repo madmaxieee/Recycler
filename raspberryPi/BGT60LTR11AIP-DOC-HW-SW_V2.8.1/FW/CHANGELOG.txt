@@ -1,0 +1,85 @@
+# Changelog
+
+## 1.1.7
+
+- BGT60LTR11
+  * Support for BGT60LTR11 Shield V2.0 (with BGT60LTR11 Shield V1.5 backward compatibility).
+  * Support for selecting RF Center frequency.
+
+## 1.1.6
+
+- Support for BGT60UTR11.
+
+## 1.1.5
+
+- BGT60LTR11:
+    * After successful initialization, the LED of the RadarBaseboardMCU7 is
+      now green.
+    * In pulse mode and with external ADCs (of the RadarBaseboardMCU7) the sample
+      is read from the LTR11 now about 50us after the end of the pulse.
+    * The scaling of the raw data has been changed.
+
+## 1.1.4
+
+- Updated driver to 0.8.14: It is now possible to disable all antennas in a
+  chirp
+- BGT60LTR11 now starts in pulse mode
+
+## 1.1.3
+
+- Updated driver to 0.8.13: Added support for BGT60TR11D
+- Bugfix: Fixed swapped idle and deep sleep parameter update
+
+## 1.1.2
+
+- BGT60LTR11: various bugfixes
+
+## 1.1.1
+
+- BGT60LTR11
+  * Support for selecting ADC source (ADCs of either RadarbaseBoardMCU7 or
+    BGT60LTR11)
+  * Startup settings have been changed to increase sensitivity
+  * Bugfix: Movements (e.g. waving a hand) over the sensor while starting the
+    data acquisition do no longer cause problems.
+  * Bugfix: LEDs now work properly if LTR11 shield is mounted on the backside.
+
+## 1.1.0
+
+- Initial support for BGT60LTR11
+  * The NVM of the BGT60LTR11 has to be initialized with the correct board id
+    or the BGT60LTR11 will not work.
+  * BGT60TRxx are not required to have the correct board id written in the NVM
+    yet. This might change in a future version.
+- BoardSupplementalEndpoint is now always exported
+- Driver has been upgraded to 0.8.12: Fixed rounding of test tone frequency
+
+## 1.0.9
+
+- RF frequency limitation added to ensure to be within legal limits
+
+## 1.0.8
+
+- Increased Driver to 0.8.9: Fixed not-working RF power measurement
+
+## 1.0.7
+
+- The bootloader endpoint is now always exported, even if no shield is attached
+  or the shield is mirrored. This allows to flash the Hatvan board if no shield
+  is attached or the shield is mirrored.
+
+## 1.0.6
+
+- Bugfix and shorter update times for ATR24C.
+
+## 1.0.5
+
+- Support for BGT60ATR24
+
+## 1.0.4
+
+- Hardware major number is now set to 2 by default
+
+## 1.0.3
+
+- Added support for enabling/disabling the power of the radar shield

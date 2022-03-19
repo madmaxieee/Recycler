@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: \\mucsdn31.eu.infineon.com\RFS_ae_tm\04_PL32_MM\04_Consumer_Radar\02_SystemProjects\Hatvan\02_HW\MCU\RBB7 V2.2\RBB_MCU7_V2.2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=rbb_mcu7_v2.2-roundholes.txt|DrillLayers=gtl,gp1,g1,g2,g3,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=rbb_mcu7_v2.2-slotholes.txt|DrillLayers=gtl,gp1,g1,g2,g3,gbl
