@@ -32,14 +32,15 @@ export const BinTable = ({
   data: BinData[];
   handleSelect: (selectionModel: string[]) => void;
 }) => {
+  console.log(data);
   const rows = data.map((data) => ({
     id: data.id,
     location: data.loc,
     coordinate: `${data.lat.slice(0, 6)}, ${data.lng.slice(0, 6)}`,
     status: `${
-      Number(data.BoxFull === "0") +
-      Number(data.BoxFull === "0") +
-      Number(data.BoxFull === "0")
+      Number(data.BoxFull === "true") +
+      Number(data.PETFull === "true") +
+      Number(data.CanFull === "true")
     }/3`,
   }));
 

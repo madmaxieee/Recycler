@@ -25,7 +25,7 @@ export const BinControls = () => {
       else return 0;
     }
 
-    navigate(points.sort(sorter));
+    if (points.length > 1) navigate(points.sort(sorter));
   };
   return (
     <Stack gap="1em">
