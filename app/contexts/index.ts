@@ -1,2 +1,2 @@
 export * from "./BinContext";
-export * from "./MapBoxContext"
+export * from "./MapBoxContext/index";

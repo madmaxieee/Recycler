@@ -12,10 +12,20 @@ export const BinControls = () => {
     setSelectedBins(selectionModel);
   };
   const handleNavigate = () => {
+    const currentPos = [121.561, 25.0434] as [number, number];
     const data = selectedBins.map((id) => bins[id]);
-    const start = [data[0].lng, data[0].lat].map(Number) as [number, number];
-    const end = [data[1].lng, data[1].lat].map(Number) as [number, number];
-    navigate(start, end);
+    const points = [
+      currentPos,
+      ...data.map((data) => [data.lng, data.lat].map(Number)),
+    ] as [number, number][];
+
+    function sorter(a: any, b: any) {
+      if (a[1] > b[1]) return 1;
+      if (a[1] < b[1]) return -1;
+      else return 0;
+    }
+
+    navigate(points.sort(sorter));
   };
   return (
     <Stack gap="1em">

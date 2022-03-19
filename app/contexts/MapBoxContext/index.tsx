@@ -1,13 +1,18 @@
-import type { MapBoxContext } from "../models";
+import type { MapBoxContext, BinContext } from "models";
 import React, {
-  useEffect,
   useState,
   useContext,
   ReactNode,
   useRef,
+  useEffect,
 } from "react";
 
 import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+import { Markers } from "./Markers";
+
+import { useBin } from "contexts";
 
 const MapBoxContext = React.createContext<MapBoxContext | null>(null);
 
@@ -19,6 +24,8 @@ export const MapBoxContextProvider = ({
   children: ReactNode;
 }) => {
   const mapBoxRef = useRef<mapboxgl.Map | null>(null);
+
+  const { bins } = useBin() as BinContext;
 
   const [lng, setLng] = useState<number>(121.561);
   const [lat, setLat] = useState<number>(25.0434);
@@ -36,18 +43,36 @@ export const MapBoxContextProvider = ({
       center: [lng, lat],
       zoom,
     });
+
+    mapBoxRef.current.on("load", () => {
+      console.log("load");
+      console.log("bins", bins);
+      mapBoxRef.current && Markers.attach(mapBoxRef.current).refreshMarkers();
+    });
   };
 
-  const navigate = async (start: [number, number], end: [number, number]) => {
+  useEffect(() => {
+    console.log("effect");
+    console.log("bins", bins);
+    Markers.setMarkers(
+      Object.values(bins).map((bin) => ({
+        loc: bin.loc,
+        lng: bin.lng,
+        lat: bin.lat,
+      }))
+    );
+  }, [bins, mapBoxRef]);
+
+  const navigate = async (points: [number, number][]) => {
     // make a directions request using cycling profile
     // an arbitrary start will always be the same
     // only the end or destination will change
+    const pointsString = points.map((point) => String(point)).join(";");
     const query = await fetch(
-      `https://api.mapbox.com/directions/v5/mapbox/cycling/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+      `https://api.mapbox.com/directions/v5/mapbox/cycling/${pointsString}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
       { method: "GET" }
     );
     const json = await query.json();
-    console.log(start, end);
     console.log(json);
     const data = json.routes[0];
     const route = data.geometry.coordinates;
@@ -61,6 +86,7 @@ export const MapBoxContextProvider = ({
     };
     // if the route already exists on the map, we'll reset it using setData
     if (mapBoxRef.current && mapBoxRef.current.getSource("route")) {
+      // @ts-ignore
       mapBoxRef.current.getSource("route").setData(geojson);
     }
     // otherwise, we'll make a new request
@@ -71,6 +97,7 @@ export const MapBoxContextProvider = ({
           type: "line",
           source: {
             type: "geojson",
+            // @ts-ignore
             data: geojson,
           },
           layout: {

@@ -11,8 +11,14 @@ export type BinContext = {
 export type MapBoxContext = {
   mapBox: mapboxgl.Map | null;
   goto: (lng: number, lat: number) => void;
-  navigate: (start: [number, number], end: [number, number]) => Promise<void>;
+  navigate: (points: [number, number][]) => Promise<void>;
   initMapBox: (
     mapContainerRef: React.MutableRefObject<HTMLDivElement | null>
   ) => void;
+};
+
+export type MarkerData = {
+  loc: string;
+  lng: string;
+  lat: string;
 };

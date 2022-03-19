@@ -6,11 +6,11 @@ import { BinContextProvider, MapBoxContextProvider } from "../contexts";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MapBoxContextProvider>
-      <BinContextProvider>
+    <BinContextProvider>
+      <MapBoxContextProvider>
         <Component {...pageProps} />
-      </BinContextProvider>
-    </MapBoxContextProvider>
+      </MapBoxContextProvider>
+    </BinContextProvider>
   );
 }
 
