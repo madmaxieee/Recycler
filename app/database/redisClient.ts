@@ -4,7 +4,7 @@ import initDB from "./initDB";
 
 const { REDIS_HOST, REDIS_PORT } = process.env;
 
-console.log(REDIS_HOST, REDIS_PORT);
+console.log("redis host:", REDIS_HOST, "\nredis port:", REDIS_PORT);
 
 const redisClient = redis.createClient({
   url: `redis://${REDIS_HOST}:${REDIS_PORT}`,

@@ -5,7 +5,10 @@ import { Logo } from "components";
 import { NavLink } from "./NavLink";
 import { Box, Toolbar } from "@mui/material";
 
-const pages = ["Home", "Dashboard"];
+const pages = [
+  // "Home",
+  "Dashboard"
+];
 
 export const NavBar = () => {
   return (

@@ -32,7 +32,6 @@ export const BinTable = ({
   data: BinData[];
   handleSelect: (selectionModel: string[]) => void;
 }) => {
-  console.log(data);
   const rows = data.map((data) => ({
     id: data.id,
     location: data.loc,

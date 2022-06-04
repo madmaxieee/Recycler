@@ -29,7 +29,7 @@ export const BinControls = () => {
   };
   return (
     <Stack gap="1em">
-      <AddBin />
+      {/* <AddBin /> */}
       <BinTable data={Object.values(bins)} handleSelect={handleSelect} />
       <Button
         variant="contained"

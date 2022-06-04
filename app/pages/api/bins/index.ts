@@ -24,7 +24,6 @@ export default async function handler(
       data: Record<string, string>;
     } = req.body;
 
-    console.log(req.body);
 
     if (await redisClient.exists(id)) {
     } else {

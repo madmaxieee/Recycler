@@ -10,7 +10,6 @@ export default async function handler(
   if (req.method === "GET") {
     const { command } = req.query;
     const [id, field, status] = command as string[];
-    console.log(command);
     await redisClient.hSet(id, field, status);
     res.status(200).json(await redisClient.hGet(id, field));
   }

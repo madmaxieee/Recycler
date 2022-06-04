@@ -24,7 +24,6 @@ export const BinContextProvider = ({ children }: { children: ReactNode }) => {
     dataArray.forEach((data) => {
       result[data.id] = data;
     });
-    console.log("fetch");
     if (!_.isEqual(bins, result)) {
       setBins(result);
     }

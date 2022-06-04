@@ -15,11 +15,8 @@ class MarkersSingleton {
   }
 
   setMarkers(markerData: MarkerData[]) {
-    console.log("map", this._map);
-    console.log("markers", markerData);
     if (this._map) {
       this.markers = markerData.map((data) => {
-        console.log([Number(data.lng), Number(data.lat)]);
         return new mapboxgl.Marker()
           .setLngLat([Number(data.lng), Number(data.lat)])
           .addTo(this._map as mapboxgl.Map);
